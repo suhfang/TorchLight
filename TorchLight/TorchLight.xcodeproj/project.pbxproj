@@ -10,6 +10,7 @@
 		F462030C245E2B2300016DF0 /* TorchLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4620302245E2B2300016DF0 /* TorchLight.framework */; };
 		F4620311245E2B2300016DF0 /* TorchLightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4620310245E2B2300016DF0 /* TorchLightTests.swift */; };
 		F4620313245E2B2300016DF0 /* TorchLight.h in Headers */ = {isa = PBXBuildFile; fileRef = F4620305245E2B2300016DF0 /* TorchLight.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F462031F245EF47000016DF0 /* TorchLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462031E245EF47000016DF0 /* TorchLight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		F462030B245E2B2300016DF0 /* TorchLightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TorchLightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4620310245E2B2300016DF0 /* TorchLightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchLightTests.swift; sourceTree = "<group>"; };
 		F4620312245E2B2300016DF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F462031E245EF47000016DF0 /* TorchLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchLight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				F4620305245E2B2300016DF0 /* TorchLight.h */,
 				F4620306245E2B2300016DF0 /* Info.plist */,
+				F462031E245EF47000016DF0 /* TorchLight.swift */,
 			);
 			path = TorchLight;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					F4620301245E2B2300016DF0 = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 					F462030A245E2B2300016DF0 = {
 						CreatedOnToolsVersion = 11.4.1;
@@ -195,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F462031F245EF47000016DF0 /* TorchLight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +345,7 @@
 		F4620317245E2B2300016DF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = N75KDU5WXZ;
@@ -356,6 +362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = suhfangmbeng.TorchLight;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +371,7 @@
 		F4620318245E2B2300016DF0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = N75KDU5WXZ;
@@ -388,6 +396,7 @@
 		F462031A245E2B2300016DF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N75KDU5WXZ;
 				INFOPLIST_FILE = TorchLightTests/Info.plist;
@@ -406,6 +415,7 @@
 		F462031B245E2B2300016DF0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N75KDU5WXZ;
 				INFOPLIST_FILE = TorchLightTests/Info.plist;
