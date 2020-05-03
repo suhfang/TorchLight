@@ -10,13 +10,13 @@ import Foundation
 import AVFoundation
 
 
-class Torch {
+public class Torch {
     
     static let shared = Torch()
     private var captureDevice: AVCaptureDevice?
     private var timer: Timer?
     
-    init() {
+    public init() {
         guard let device = AVCaptureDevice.default(for: AVMediaType.video), device.hasTorch, device.hasFlash else {
             print("Could not initialize TorchLight framework because the device is not supported.")
             return
@@ -24,21 +24,21 @@ class Torch {
         captureDevice = device
     }
     
-    func isOn() -> Bool {
+    public func isOn() -> Bool {
         try? captureDevice?.lockForConfiguration()
         let result = captureDevice?.torchMode == AVCaptureDevice.TorchMode.on
         captureDevice?.unlockForConfiguration()
         return result
     }
     
-    func isOff() -> Bool {
+    public func isOff() -> Bool {
         try? captureDevice?.lockForConfiguration()
         let result = captureDevice?.torchMode == AVCaptureDevice.TorchMode.off
         captureDevice?.unlockForConfiguration()
         return result
     }
     
-    func turnOn() {
+    public func turnOn() {
         if isOff() {
             guard let device = captureDevice else {return}
             try? device.lockForConfiguration()
@@ -49,7 +49,7 @@ class Torch {
         }
     }
     
-    func turnOff() {
+    public func turnOff() {
         if isOff() {
             guard let device = captureDevice else {return}
             try? device.lockForConfiguration()
@@ -60,7 +60,7 @@ class Torch {
         }
     }
     
-    func toggleTorch() {
+    public func toggleTorch() {
         if isOff() {
             turnOn()
         } else {
@@ -68,7 +68,7 @@ class Torch {
         }
     }
     
-    func makeFlash(every: Double) {
+    public func makeFlash(every: Double) {
         timer = Timer.scheduledTimer(withTimeInterval: every, repeats: true, block: {[weak self] (timer) in
             self?.toggleTorch()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {[weak self] in
