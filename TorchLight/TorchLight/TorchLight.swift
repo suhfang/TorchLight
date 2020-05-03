@@ -13,10 +13,6 @@ import UIKit
 
 public class Torch {
     
-    public enum state {
-        public static var (on, off) = (false, false)
-    }
-    
     public var captureDevice: AVCaptureDevice?
     
     public init() {
@@ -47,7 +43,6 @@ public class Torch {
             try? device.lockForConfiguration()
             try? device.setTorchModeOn(level: 1.0)
             device.unlockForConfiguration()
-            state.on = true
         } else {
             print("Torch Light is already on")
         }
@@ -59,7 +54,6 @@ public class Torch {
             try? device.lockForConfiguration()
             device.torchMode = AVCaptureDevice.TorchMode.off
             device.unlockForConfiguration()
-            state.on = false
         } else {
             print("Torch Light is already off")
         }
