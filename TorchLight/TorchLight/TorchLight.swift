@@ -13,9 +13,11 @@ import UIKit
 
 public class Torch {
     
-    public static let shared = Torch()
+    public enum state {
+        public static var (on, off) = (false, false)
+    }
+    
     public var captureDevice: AVCaptureDevice?
-    public var timer: Timer?
     
     public init() {
         guard let device = AVCaptureDevice.default(for: AVMediaType.video), device.hasTorch, device.hasFlash else {
@@ -45,43 +47,24 @@ public class Torch {
             try? device.lockForConfiguration()
             try? device.setTorchModeOn(level: 1.0)
             device.unlockForConfiguration()
+            state.on = true
         } else {
             print("Torch Light is already on")
         }
     }
     
     public func turnOff() {
-        if isOff() {
+        if isOn() {
             guard let device = captureDevice else {return}
             try? device.lockForConfiguration()
             device.torchMode = AVCaptureDevice.TorchMode.off
             device.unlockForConfiguration()
+            state.on = false
         } else {
-            print("Torch Light is already on")
+            print("Torch Light is already off")
         }
     }
-    
-    public func toggleTorch() {
-        if isOff() {
-            turnOn()
-        } else {
-            turnOff()
-        }
-    }
-    
-    @objc public func flash(timeinterval: TimeInterval) {
-        toggleTorch()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {[weak self] in
-            self?.toggleTorch()
-        }
-    }
-    
-    public func makeFlash(timeinterval: Double, target: UIViewController) {
-        timer = Timer.scheduledTimer(withTimeInterval: timeinterval, repeats: true, block: {[weak self] (timer) in
-            self?.flash(timeinterval: timeinterval)
-        })
-    }
-    
+
     deinit {
         print("Memory allocated for Torchlight has been deallocated")
     }
