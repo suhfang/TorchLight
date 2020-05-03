@@ -75,6 +75,7 @@ public class Torch {
                 self?.toggleTorch()
             }
         })
+        timer?.fire()
     }
     
     deinit {
