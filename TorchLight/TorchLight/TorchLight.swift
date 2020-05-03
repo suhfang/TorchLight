@@ -13,9 +13,9 @@ import UIKit
 
 public class Torch {
     
-    static let shared = Torch()
-    private var captureDevice: AVCaptureDevice?
-    private var timer: Timer?
+    public static let shared = Torch()
+    public var captureDevice: AVCaptureDevice?
+    public var timer: Timer?
     
     public init() {
         guard let device = AVCaptureDevice.default(for: AVMediaType.video), device.hasTorch, device.hasFlash else {
