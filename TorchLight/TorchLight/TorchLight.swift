@@ -9,6 +9,7 @@
 import Foundation
 import AVFoundation
 
+
 public class Torch {
     
     public var captureDevice: AVCaptureDevice?
