@@ -9,11 +9,6 @@
 import Foundation
 import AVFoundation
 
-
-public enum BlinkStyle {
-    public static var (on, off) = (false, false)
-}
-
 public class Torch {
     
     public var captureDevice: AVCaptureDevice?
