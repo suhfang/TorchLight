@@ -10,9 +10,9 @@ import Foundation
 import AVFoundation
 
 
-class TorchLight {
+class Torch {
     
-    static let shared = TorchLight()
+    static let shared = Torch()
     private var captureDevice: AVCaptureDevice?
     private var timer: Timer?
     
