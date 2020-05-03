@@ -71,7 +71,7 @@ public class Torch {
     public func makeFlash(every: Double) {
         timer = Timer.scheduledTimer(withTimeInterval: every, repeats: true, block: {[weak self] (timer) in
             self?.toggleTorch()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {[weak self] in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {[weak self] in
                 self?.toggleTorch()
             }
         })
