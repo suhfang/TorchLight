@@ -7,29 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F462030C245E2B2300016DF0 /* TorchLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4620302245E2B2300016DF0 /* TorchLight.framework */; };
-		F4620311245E2B2300016DF0 /* TorchLightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4620310245E2B2300016DF0 /* TorchLightTests.swift */; };
 		F4620313245E2B2300016DF0 /* TorchLight.h in Headers */ = {isa = PBXBuildFile; fileRef = F4620305245E2B2300016DF0 /* TorchLight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F462031F245EF47000016DF0 /* TorchLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462031E245EF47000016DF0 /* TorchLight.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		F462030D245E2B2300016DF0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F46202F9245E2B2300016DF0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F4620301245E2B2300016DF0;
-			remoteInfo = TorchLight;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F4620302245E2B2300016DF0 /* TorchLight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TorchLight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4620305245E2B2300016DF0 /* TorchLight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TorchLight.h; sourceTree = "<group>"; };
 		F4620306245E2B2300016DF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F462030B245E2B2300016DF0 /* TorchLightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TorchLightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4620310245E2B2300016DF0 /* TorchLightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchLightTests.swift; sourceTree = "<group>"; };
-		F4620312245E2B2300016DF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F462031E245EF47000016DF0 /* TorchLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchLight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,14 +26,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4620308245E2B2300016DF0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F462030C245E2B2300016DF0 /* TorchLight.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -56,7 +33,6 @@
 			isa = PBXGroup;
 			children = (
 				F4620304245E2B2300016DF0 /* TorchLight */,
-				F462030F245E2B2300016DF0 /* TorchLightTests */,
 				F4620303245E2B2300016DF0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,7 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				F4620302245E2B2300016DF0 /* TorchLight.framework */,
-				F462030B245E2B2300016DF0 /* TorchLightTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,15 +53,6 @@
 				F462031E245EF47000016DF0 /* TorchLight.swift */,
 			);
 			path = TorchLight;
-			sourceTree = "<group>";
-		};
-		F462030F245E2B2300016DF0 /* TorchLightTests */ = {
-			isa = PBXGroup;
-			children = (
-				F4620310245E2B2300016DF0 /* TorchLightTests.swift */,
-				F4620312245E2B2300016DF0 /* Info.plist */,
-			);
-			path = TorchLightTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,24 +87,6 @@
 			productReference = F4620302245E2B2300016DF0 /* TorchLight.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F462030A245E2B2300016DF0 /* TorchLightTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F4620319245E2B2300016DF0 /* Build configuration list for PBXNativeTarget "TorchLightTests" */;
-			buildPhases = (
-				F4620307245E2B2300016DF0 /* Sources */,
-				F4620308245E2B2300016DF0 /* Frameworks */,
-				F4620309245E2B2300016DF0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F462030E245E2B2300016DF0 /* PBXTargetDependency */,
-			);
-			name = TorchLightTests;
-			productName = TorchLightTests;
-			productReference = F462030B245E2B2300016DF0 /* TorchLightTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -152,9 +100,6 @@
 					F4620301245E2B2300016DF0 = {
 						CreatedOnToolsVersion = 11.4.1;
 						LastSwiftMigration = 1140;
-					};
-					F462030A245E2B2300016DF0 = {
-						CreatedOnToolsVersion = 11.4.1;
 					};
 				};
 			};
@@ -172,20 +117,12 @@
 			projectRoot = "";
 			targets = (
 				F4620301245E2B2300016DF0 /* TorchLight */,
-				F462030A245E2B2300016DF0 /* TorchLightTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F4620300245E2B2300016DF0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F4620309245E2B2300016DF0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -203,23 +140,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4620307245E2B2300016DF0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F4620311245E2B2300016DF0 /* TorchLightTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F462030E245E2B2300016DF0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F4620301245E2B2300016DF0 /* TorchLight */;
-			targetProxy = F462030D245E2B2300016DF0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F4620314245E2B2300016DF0 /* Debug */ = {
@@ -393,44 +314,6 @@
 			};
 			name = Release;
 		};
-		F462031A245E2B2300016DF0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N75KDU5WXZ;
-				INFOPLIST_FILE = TorchLightTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = suhfangmbeng.TorchLightTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		F462031B245E2B2300016DF0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N75KDU5WXZ;
-				INFOPLIST_FILE = TorchLightTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = suhfangmbeng.TorchLightTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -448,15 +331,6 @@
 			buildConfigurations = (
 				F4620317245E2B2300016DF0 /* Debug */,
 				F4620318245E2B2300016DF0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F4620319245E2B2300016DF0 /* Build configuration list for PBXNativeTarget "TorchLightTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F462031A245E2B2300016DF0 /* Debug */,
-				F462031B245E2B2300016DF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
