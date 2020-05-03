@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <TorchLight/TorchLight-Swift.h>
 
 //! Project version number for TorchLight.
 FOUNDATION_EXPORT double TorchLightVersionNumber;
