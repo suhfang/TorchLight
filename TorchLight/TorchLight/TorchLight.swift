@@ -12,21 +12,64 @@ import AVFoundation
 
 class TorchLight {
     
-    class var isOn: Bool {
-        
-        guard let device = AVCaptureDevice.default(for: AVMediaType.video) else {
-            print("Could not check for torch light because this device is unsupported")
-            return false
+    static let shared = TorchLight()
+    private var captureDevice: AVCaptureDevice?
+    private var timer: Timer?
+    
+    init() {
+        guard let device = AVCaptureDevice.default(for: AVMediaType.video), device.hasTorch, device.hasFlash else {
+            print("Could not initialize TorchLight framework because the device is not supported.")
+            return
         }
-        
-        do {
-            try device.lockForConfiguration()
-            let result = device.torchMode == AVCaptureDevice.TorchMode.on
+        captureDevice = device
+    }
+    
+    func isOn() -> Bool {
+        try? captureDevice?.lockForConfiguration()
+        let result = captureDevice?.torchMode == AVCaptureDevice.TorchMode.on
+        captureDevice?.unlockForConfiguration()
+        return result
+    }
+    
+    func isOff() -> Bool {
+        try? captureDevice?.lockForConfiguration()
+        let result = captureDevice?.torchMode == AVCaptureDevice.TorchMode.off
+        captureDevice?.unlockForConfiguration()
+        return result
+    }
+    
+    func turnOn() {
+        if isOff() {
+            guard let device = captureDevice else {return}
+            try? device.lockForConfiguration()
+            try? device.setTorchModeOn(level: 1.0)
             device.unlockForConfiguration()
-            return result
-        } catch {
-            print(error)
+        } else {
+            print("Torch Light is already on")
         }
-        return false
+    }
+    
+    func turnOff() {
+        if isOff() {
+            guard let device = captureDevice else {return}
+            try? device.lockForConfiguration()
+            device.torchMode = AVCaptureDevice.TorchMode.off
+            device.unlockForConfiguration()
+        } else {
+            print("Torch Light is already on")
+        }
+    }
+    
+    func makeFlash(every: Double) {
+        timer = Timer.scheduledTimer(withTimeInterval: every, repeats: true, block: {[weak self] (timer) in
+            self?.turnOn()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {[weak self] in
+                self?.turnOff()
+            }
+        })
+    }
+    
+    deinit {
+        print("Memory allocated for Torchlight has been deallocated")
     }
 }
