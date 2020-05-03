@@ -68,14 +68,15 @@ public class Torch {
         }
     }
     
-    public func makeFlash(every: Double) {
-        timer = Timer.scheduledTimer(withTimeInterval: every, repeats: true, block: {[weak self] (timer) in
+    @objc public func flash() {
+        toggleTorch()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {[weak self] in
             self?.toggleTorch()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {[weak self] in
-                self?.toggleTorch()
-            }
-        })
-        timer?.fire()
+        }
+    }
+    
+    public func makeFlash(timeInterval: Double) {
+        timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(flash), userInfo: nil, repeats: true)
     }
     
     deinit {
