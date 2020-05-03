@@ -9,7 +9,7 @@ Pod::Spec.new do |spec|
   spec.author               = { "Suh Fangmbeng" => "me@suhfangmbeng.com" }
   spec.platform             = :ios, "10.0"
   spec.source               = { :git => "https://github.com/suhfangmbeng/TorchLight.git", :tag => "1.0.0" }
-  spec.source_files         = "TorchLight/TorchLight/**/*.{h,m,swift}"
+  spec.source_files         = "TorchLight", "TorchLight/**/*.{h,m,swift}"
   spec.swift_versions       = "4.0"
   
 end

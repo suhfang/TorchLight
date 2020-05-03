@@ -60,11 +60,19 @@ class TorchLight {
         }
     }
     
+    func toggleTorch() {
+        if isOff() {
+            turnOn()
+        } else {
+            turnOff()
+        }
+    }
+    
     func makeFlash(every: Double) {
         timer = Timer.scheduledTimer(withTimeInterval: every, repeats: true, block: {[weak self] (timer) in
-            self?.turnOn()
+            self?.toggleTorch()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {[weak self] in
-                self?.turnOff()
+                self?.toggleTorch()
             }
         })
     }
